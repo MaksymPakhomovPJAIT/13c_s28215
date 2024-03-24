@@ -19,7 +19,7 @@ squares = square_gen.generate_squares(start, end)
 print("List of squares of numbers from", start, "to", end, ":", squares)
 
 import math
-from square_generator import SquareGenerator
+from square_generator.square_generator import SquareGenerator
 square_gen = SquareGenerator()
 start = 10
 end = 1
