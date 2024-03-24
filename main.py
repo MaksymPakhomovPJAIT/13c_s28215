@@ -21,13 +21,18 @@ print("List of squares of numbers from", start, "to", end, ":", squares)
 import math
 class SquareGenerator:
     def generate_squares(self, start, end):
-        squares = [x**2 for x in range(start, end + 1)]
+        if end < start:
+            raise ValueError("End of the range must be greater than or equal to the start.")
+        squares = [x ** 2 for x in range(start, end + 1)]
         return squares
 square_gen = SquareGenerator()
-start = 1
-end = 10
-squares = square_gen.generate_squares(start, end)
-square_roots = [math.sqrt(num) for num in squares]
-print("List of square roots of numbers from", start, "to", end, ":")
-print(square_roots)
+start = 10
+end = 1
+try:
+    squares = square_gen.generate_squares(start, end)
+    square_roots = [math.sqrt(num) for num in squares]
+    print("List of square roots of numbers from", start, "to", end, ":")
+    print(square_roots)
+except ValueError as e:
+    print("Error:", e)
 
