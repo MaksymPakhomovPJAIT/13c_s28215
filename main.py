@@ -31,3 +31,12 @@ try:
 except ValueError as e:
     print("Error:", e)
 
+from square_generator.cubic_generator import CubicGenerator
+
+cubic_gen = CubicGenerator()
+start = 1
+end = 5
+
+cubes = cubic_gen.generate_squares(start, end)
+print("List of cubes of numbers from", start, "to", end, ":")
+print(cubes)
