@@ -5,3 +5,9 @@ class SquareGenerator:
 
         squares = [x ** 2 for x in range(start, end + 1)]
         return squares
+
+from abc import ABC, abstractmethod
+class SquareGenerator(ABC):
+    @abstractmethod
+    def generate_squares(self, start, end):
+        pass
